@@ -68,13 +68,13 @@ button, label {
 }
 
 .button:hover {
-  outline-offset: 1px;
   text-decoration: underline;
+  text-underline-offset: 1px;
 }
 
 .button:focus-visible {
-  border: double #fff;
-  border-radius: 0;
+  border: none;
+  outline: double #fff;
 }
 
 .visually-hidden {
@@ -157,9 +157,7 @@ button, label {
 }
 
 .search-form__label:has(.search-form__textfield:focus-visible) {
-  border: 1px solid #fff;
-  border-radius: 0;
-  outline: none;
+  outline: 1px solid #fff;
 }
 
 .search-form__checkbox-list {
@@ -189,13 +187,12 @@ button, label {
 }
 
 .search-form__label:has(.search-form__checkbox:focus-visible) {
-  border: 1px solid #fff;
-  border-radius: 0;
+  outline: 1px solid #fff;
 }
 
 .search-form__label:hover:has(.search-form__label-text:not(:first-child)) {
-  outline-offset: 1px;
   text-decoration: underline;
+  text-underline-offset: 1px;
 }
 
 
@@ -220,11 +217,8 @@ button, label {
 .content__list {
   position: relative;
   height: 298px;
-  overflow-y: auto;
-}
-
-.content__list::-webkit-scrollbar {
-  display: none;
+  padding-bottom: 1px;
+  overflow: auto;
 }
 
 .content__list-item:not(:last-of-type) {
@@ -232,8 +226,27 @@ button, label {
 }
 
 .content__card-link {
+  display: block;
+  margin: 2px;
   color: #fff;
   text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:hover .content__video-card-description-container {
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .content__video-card {
@@ -243,6 +256,7 @@ button, label {
 
 .content__video-card-description-container {
   flex-grow: 1;
+  padding: 1px;
 }
 
 .content__video-card-title{
@@ -266,7 +280,7 @@ button, label {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
+  width: 179px;
   height: 103px;
   object-fit: cover;
   object-position: center;
