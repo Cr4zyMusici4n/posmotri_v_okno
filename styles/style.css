@@ -39,11 +39,7 @@ ol {
   list-style: none;
 }
 
-fieldset {
-  border: none;
-}
-
-button, label {
+.button, .search-form__label {
   cursor: pointer;
 }
 
@@ -51,7 +47,7 @@ button, label {
   height: 34px;
   border: 1px solid #fff;
   color: #fff;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 21.6px;
@@ -100,7 +96,8 @@ button, label {
 .result__video-container {
   position: relative;
   height: 386px;
-  margin-bottom: 16px;
+  margin-block-end: 16px;
+  writing-mode: horizontal-tb;
 }
 
 .result__video {
@@ -117,13 +114,14 @@ button, label {
 }
 
 .search-form__fieldset {
-  line-height: 27px;
+  border: none;
 }
 
 .search-form__fieldset-title {
+  margin-block-end: 5px;
   font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 21.6px;
 }
 
 .search-form__label {
@@ -135,7 +133,6 @@ button, label {
 }
 
 .search-form__textfield {
-  min-width: 225px;
   min-height: 27px;
   border: none;
   border-top: 1px solid #fff;
@@ -146,6 +143,7 @@ button, label {
   font-weight: 400;
   font-size: 18px;
   background: transparent;
+  inline-size: 225px;
 }
 
 .search-form__textfield:focus {
@@ -162,9 +160,9 @@ button, label {
 
 .search-form__checkbox-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  min-width: 212px;
-  max-height: 22px;
+  inline-size: 212px;
 }
 
 .search-form__pseudo-checkbox {
@@ -202,11 +200,11 @@ button, label {
 }
 
 .title {
-  margin-bottom: 26px;
-  font-family: Oswald;
+  margin-bottom: 22px;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
-  line-height: 69px;
+  line-height: 94%;
   text-transform: uppercase;
 }
 
@@ -217,7 +215,6 @@ button, label {
 .content__list {
   position: relative;
   height: 298px;
-  padding-bottom: 1px;
   overflow: auto;
 }
 
@@ -227,7 +224,8 @@ button, label {
 
 .content__card-link {
   display: block;
-  margin: 2px;
+  min-height: 107px;
+  padding: 2px;
   color: #fff;
   text-decoration: none;
 }
@@ -236,7 +234,7 @@ button, label {
   background-color: #545050;
 }
 
-.content__card-link:hover .content__video-card-description-container {
+.content__card-link:hover {
   text-decoration: underline;
   text-underline-offset: 1px;
 }
@@ -247,16 +245,18 @@ button, label {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
+  outline-offset: -1px;
 }
 
 .content__video-card {
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
 .content__video-card-description-container {
-  flex-grow: 1;
   padding: 1px;
+  max-inline-size: 200px;
 }
 
 .content__video-card-title{
@@ -268,7 +268,6 @@ button, label {
   line-height: 30px;
   text-transform: uppercase;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .content__video-card-description {
@@ -276,11 +275,11 @@ button, label {
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
-  white-space: normal;
+  word-break: break-word;
 }
 
 .content__video-card-thumbnail {
-  width: 179px;
+  width: 177px;
   height: 103px;
   object-fit: cover;
   object-position: center;
@@ -288,4 +287,5 @@ button, label {
 
 .more-button {
   width: 100%;
+  outline-offset: -3px;
 }
